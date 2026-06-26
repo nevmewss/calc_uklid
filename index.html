@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Úklid domácnosti Praha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="page-progress">
+      <nav class="progress-steps" aria-label="Průběh objednávky">
+        <button class="progress-step active" type="button" data-target="service-section">
+          <span>1. Výběr služby</span>
+        </button>
+        <button class="progress-step" type="button" data-target="address-section">
+          <span>2. Adresa a kontaktní údaje</span>
+        </button>
+        <button class="progress-step" type="button" data-target="payment-section">
+          <span>3. Výběr způsobu platby</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <div class="content-column">
+        <section class="calculator-section" id="service-section">
+          <h1 class="page-title">Úklid domácnosti Praha</h1>
+
+          <div class="person-type" role="tablist" aria-label="Typ zákazníka">
+            <button
+              class="segment-button active"
+              type="button"
+              data-customer="person"
+              aria-selected="true"
+            >
+              Fyzická osoba
+            </button>
+            <button
+              class="segment-button"
+              type="button"
+              data-customer="company"
+              aria-selected="false"
+            >
+              Právnická osoba
+            </button>
+          </div>
+
+          <div class="stage-box">
+            <div class="stage-header stage-header--spread">
+              <h2 class="stage-title">Váš byt</h2>
+              <button class="help-link" type="button">
+                <span class="help-icon">?</span>
+                <span>Co je součástí úklidu bytu</span>
+              </button>
+            </div>
+
+            <div class="counter-strip">
+              <article class="counter-panel">
+                <div class="counter-controls" data-counter="rooms">
+                  <button class="counter-button" type="button" data-action="decrease">-</button>
+                  <strong class="counter-value" id="rooms-value">1 pokoj</strong>
+                  <button class="counter-button" type="button" data-action="increase">+</button>
+                </div>
+              </article>
+
+              <article class="counter-panel">
+                <div class="counter-controls" data-counter="bathrooms">
+                  <button class="counter-button" type="button" data-action="decrease">-</button>
+                  <strong class="counter-value" id="bathrooms-value">2 koupelny</strong>
+                  <button class="counter-button" type="button" data-action="increase">+</button>
+                </div>
+              </article>
+            </div>
+
+            <p class="service-note">
+              * Kompletní úklid celého bytu, kuchyně, toalety a koupelny
+            </p>
+
+            <div class="kitchen-row">
+              <label class="mini-choice" data-kitchen="kitchen">
+                <input type="radio" name="kitchenType" value="kitchen" />
+                <span class="choice-mark"></span>
+                <span class="mini-choice-text">Kuchyň</span>
+              </label>
+
+              <span class="kitchen-divider">Nebo</span>
+
+              <label class="mini-choice selected" data-kitchen="kitchenette">
+                <input type="radio" name="kitchenType" value="kitchenette" checked />
+                <span class="choice-mark"></span>
+                <span class="mini-choice-text">+kk</span>
+                <span class="price-chip">-50 Kč</span>
+              </label>
+            </div>
+
+            <label class="house-row">
+              <input type="checkbox" id="private-house" />
+              <span class="choice-mark"></span>
+              <span class="house-icon">🏠</span>
+              <span class="house-copy">Soukromý dům</span>
+              <span class="price-chip">x1.2</span>
+            </label>
+          </div>
+
+          <div class="stage-box">
+            <div class="stage-header">
+              <h2 class="stage-title">Vyberte si vhodný termín a čas</h2>
+            </div>
+
+            <div class="schedule-layout">
+              <div class="calendar-board">
+                <div class="month-header">
+                  <button class="month-arrow" id="month-prev" type="button" aria-label="Předchozí měsíc">
+                    ‹
+                  </button>
+                  <strong id="month-label">Červen</strong>
+                  <button class="month-arrow" id="month-next" type="button" aria-label="Další měsíc">›</button>
+                </div>
+
+                <div class="weekday-row">
+                  <span>Pondělí</span>
+                  <span>Úterý</span>
+                  <span>Středa</span>
+                  <span>Čtvrtek</span>
+                  <span>Pátek</span>
+                  <span>Sobota</span>
+                  <span>Neděle</span>
+                </div>
+
+                <div class="calendar-grid" id="calendar-grid"></div>
+
+                <div class="month-tip">Toto už je Červenec</div>
+              </div>
+
+              <div class="times-board">
+                <div class="time-grid" id="time-grid"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stage-box">
+            <div class="stage-header">
+              <div>
+                <p class="stage-eyebrow">Sleva</p>
+                <h2 class="stage-heading">Pravidelný úklid - vyšší sleva</h2>
+              </div>
+            </div>
+
+            <div class="frequency-grid">
+              <button class="frequency-card" type="button" data-frequency="weekly" data-discount="20">
+                <span class="discount-badge">-20%</span>
+                <strong>Jednou týdně</strong>
+                <small>Nejvyšší sleva</small>
+              </button>
+
+              <button
+                class="frequency-card"
+                type="button"
+                data-frequency="twice-monthly"
+                data-discount="15"
+              >
+                <span class="discount-badge">-15%</span>
+                <strong>Dvakrát měsíčně</strong>
+                <small>Nejoblíbenější</small>
+              </button>
+
+              <button class="frequency-card" type="button" data-frequency="monthly" data-discount="10">
+                <span class="discount-badge">-10%</span>
+                <strong>Jednou měsíčně</strong>
+                <small>Flexibilní varianta</small>
+              </button>
+
+              <button
+                class="frequency-card selected"
+                type="button"
+                data-frequency="once"
+                data-discount="0"
+              >
+                <span class="discount-badge discount-badge--neutral">🙂</span>
+                <strong>Jednorázový úklid</strong>
+                <small>Bez slevy</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="stage-box">
+            <div class="stage-header">
+              <h2 class="stage-title">Vyberte si další služby</h2>
+            </div>
+
+            <div class="service-cards" id="extras-grid"></div>
+
+            <label class="vacuum-banner">
+              <input type="checkbox" id="vacuum-needed" />
+              <span class="choice-mark"></span>
+              <span class="vacuum-icon">🧹</span>
+              <span class="vacuum-copy">
+                <strong>Potřebujete vysavač na objednávku</strong>
+                <small>Přivezeme malý vysavač</small>
+              </span>
+              <span class="price-chip">200 Kč</span>
+            </label>
+
+            <button
+              class="upholstery-toggle"
+              id="upholstery-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="upholstery-panel"
+            >
+              <span class="upholstery-icon">🛋️</span>
+              <span class="upholstery-copy">
+                OBJEDNÁNÍ CHEMICKÉHO ČIŠTĚNÍ NÁBYTKU A KOBERCŮ SOUČASNĚ S ÚKLIDEM
+              </span>
+              <span class="toggle-arrow">⌄</span>
+            </button>
+
+            <div class="upholstery-panel" id="upholstery-panel" hidden>
+              <div class="service-cards service-cards--upholstery" id="upholstery-grid"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="calculator-section" id="address-section">
+          <div class="form-stage form-stage--address">
+            <h2 class="stage-title">Zadejte svou adresu</h2>
+
+            <div class="form-grid">
+              <label class="field field-wide field--city">
+                <span>Vyberte své město</span>
+                <select id="city" aria-label="Vyberte své město"></select>
+              </label>
+
+              <label class="field field-wide-2">
+                <span>Ulice</span>
+                <input type="text" placeholder="" />
+              </label>
+
+              <label class="field">
+                <span>PSČ</span>
+                <input type="text" placeholder="" />
+              </label>
+
+              <label class="field">
+                <span>Číslo popisné</span>
+                <input type="text" placeholder="" />
+              </label>
+
+              <label class="field">
+                <span>Číslo bytu</span>
+                <input type="text" placeholder="" />
+              </label>
+
+              <label class="field">
+                <span>Budova</span>
+                <input type="text" placeholder="" />
+              </label>
+
+              <label class="field field-wide-2">
+                <span>Vstupní číslo</span>
+                <input type="text" placeholder="" />
+              </label>
+
+              <label class="field">
+                <span>Podlaží</span>
+                <input type="text" placeholder="" />
+              </label>
+
+              <label class="field">
+                <span>Kód k dveřím</span>
+                <input type="text" placeholder="" />
+              </label>
+            </div>
+          </div>
+
+          <div class="stage-separator"></div>
+
+          <div class="form-stage form-stage--contact">
+            <h2 class="stage-title">Kontaktní údaje</h2>
+
+            <div class="form-grid">
+              <label class="field">
+                <span>Vaše jméno</span>
+                <input type="text" placeholder="" />
+              </label>
+
+              <label class="field">
+                <span>Kontaktní telefonní číslo</span>
+                <div class="phone-field">
+                  <span class="phone-prefix">CZ +420</span>
+                  <input id="phone-input" type="tel" inputmode="numeric" maxlength="11" placeholder="601 123 456" />
+                </div>
+              </label>
+
+              <label class="field field-wide">
+                <span>E-mailová adresa</span>
+                <input type="email" placeholder="" />
+              </label>
+
+              <label class="field field-wide">
+                <span>Doplňující informace k objednávce</span>
+                <textarea rows="5"></textarea>
+              </label>
+            </div>
+          </div>
+
+          <div class="stage-separator"></div>
+
+          <div class="form-stage">
+            <h2 class="stage-title">Vyberte platební metodu</h2>
+
+            <div class="payment-grid">
+              <button class="payment-card selected" type="button" data-payment="cash">
+                <span class="payment-icon">💵</span>
+                <strong>Hotovost</strong>
+              </button>
+
+              <button class="payment-card" type="button" data-payment="card">
+                <span class="payment-icon">💳</span>
+                <strong>Online kartou / Apple Pay / Google Pay</strong>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="calculator-section" id="payment-section">
+          <div class="final-stage">
+            <div class="consent-list">
+              <label class="consent-row">
+                <input type="checkbox" checked />
+                <span class="choice-mark"></span>
+                <span>
+                  Podáním objednávky souhlasím s
+                  <a href="/">Podmínky používání</a>
+                  a
+                  <a href="/">se zásadami ochrany osobních údajů</a>
+                </span>
+              </label>
+
+              <label class="consent-row">
+                <input type="checkbox" />
+                <span class="choice-mark"></span>
+                <span>
+                  Souhlasím s tím, aby správce zpracovával mé osobní údaje pro marketingové účely
+                </span>
+              </label>
+            </div>
+
+            <button class="primary-button final-button" type="button" id="final-order-button">
+              Objednat za <span id="final-order-price">1358 Kč</span>
+              <del id="final-order-original">1358 Kč</del>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <aside class="summary-column">
+        <div class="summary-card">
+          <h3 id="summary-title">Úklid bytu s 1 pokojem a 2 koupelny, kuchyně, chodba 1358 Kč</h3>
+
+          <div class="summary-note">
+            <span class="summary-note-icon">🧴</span>
+            <p>Naši partneři mají všechny potřebné čisticí prostředky a jiné vybavení</p>
+          </div>
+
+          <div class="summary-meta">
+            <span>Přibližný čas</span>
+            <strong id="summary-duration">3 Hodiny 50 minuty</strong>
+          </div>
+
+          <form class="promo-box" id="promo-form">
+            <label class="promo-input-wrap" for="promo-code">
+              <span class="promo-icon">%</span>
+              <input id="promo-code" type="text" placeholder="Zadejte reklamní kód" />
+            </label>
+            <button class="promo-button" type="submit">Použít</button>
+          </form>
+
+          <button class="referral-row" type="button">
+            <span>Doporučovací program</span>
+            <small>Jak to funguje?</small>
+          </button>
+
+          <div class="summary-total">
+            <span>K platbě:</span>
+            <div class="summary-total-prices">
+              <strong id="summary-total-price">1358 Kč</strong>
+              <del id="summary-original-price">1358 Kč</del>
+            </div>
+          </div>
+
+          <button class="primary-button" type="button" id="summary-order-button">Objednat</button>
+        </div>
+      </aside>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

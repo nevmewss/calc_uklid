@@ -30,7 +30,18 @@
     <main class="page-shell">
       <div class="content-column">
         <section class="calculator-section" id="service-section">
-          <h1 class="page-title">Úklid domácnosti Praha</h1>
+          <div class="page-heading">
+            <h1 class="page-title">Úklid domácnosti Praha</h1>
+
+            <div class="locale-switcher" role="group" aria-label="Language switcher">
+              <button class="locale-switcher__button active" type="button" data-locale="cs">
+                CZ
+              </button>
+              <button class="locale-switcher__button" type="button" data-locale="ru">RU</button>
+              <button class="locale-switcher__button" type="button" data-locale="uk">UA</button>
+              <button class="locale-switcher__button" type="button" data-locale="en">EN</button>
+            </div>
+          </div>
 
           <div class="person-type" role="tablist" aria-label="Typ zákazníka">
             <button
@@ -123,7 +134,7 @@
                   <button class="month-arrow" id="month-next" type="button" aria-label="Další měsíc">›</button>
                 </div>
 
-                <div class="weekday-row">
+                <div class="weekday-row" id="weekday-row">
                   <span>Pondělí</span>
                   <span>Úterý</span>
                   <span>Středa</span>
@@ -135,7 +146,6 @@
 
                 <div class="calendar-grid" id="calendar-grid"></div>
 
-                <div class="month-tip">Toto už je Červenec</div>
               </div>
 
               <div class="times-board">
@@ -224,6 +234,34 @@
             <div class="upholstery-panel" id="upholstery-panel" hidden>
               <div class="service-cards service-cards--upholstery" id="upholstery-grid"></div>
             </div>
+
+            <button
+              class="upholstery-toggle"
+              id="handyman-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="handyman-panel"
+            >
+              <span class="upholstery-icon">🛠️</span>
+              <span class="upholstery-copy">MUŽ NA HODINU</span>
+              <span class="toggle-arrow">⌄</span>
+            </button>
+
+            <div class="upholstery-panel" id="handyman-panel" hidden></div>
+
+            <button
+              class="upholstery-toggle"
+              id="moving-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="moving-panel"
+            >
+              <span class="upholstery-icon">📦</span>
+              <span class="upholstery-copy">PŘEVOZ A STĚHOVÁNÍ</span>
+              <span class="toggle-arrow">⌄</span>
+            </button>
+
+            <div class="upholstery-panel" id="moving-panel" hidden></div>
           </div>
         </section>
 
@@ -353,8 +391,11 @@
             </div>
 
             <button class="primary-button final-button" type="button" id="final-order-button">
-              Objednat za <span id="final-order-price">1358 Kč</span>
-              <del id="final-order-original">1358 Kč</del>
+              <span class="final-button__label">Objednat za</span>
+              <span class="final-button__price-wrap">
+                <span id="final-order-price">1358 Kč</span>
+                <del id="final-order-original">1358 Kč</del>
+              </span>
             </button>
           </div>
         </section>

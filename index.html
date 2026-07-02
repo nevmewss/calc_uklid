@@ -113,7 +113,9 @@
             <label class="house-row">
               <input type="checkbox" id="private-house" />
               <span class="choice-mark"></span>
-              <span class="house-icon">🏠</span>
+              <span class="house-icon">
+                <img src="assets/icons/home.svg" alt="" class="ui-icon-image" aria-hidden="true" />
+              </span>
               <span class="house-copy">Soukromý dům</span>
               <span class="price-chip">x1.2</span>
             </label>
@@ -209,7 +211,9 @@
             <label class="vacuum-banner">
               <input type="checkbox" id="vacuum-needed" />
               <span class="choice-mark"></span>
-              <span class="vacuum-icon">🧹</span>
+              <span class="vacuum-icon">
+                <img src="assets/icons/vacuum.svg" alt="" class="ui-icon-image" aria-hidden="true" />
+              </span>
               <span class="vacuum-copy">
                 <strong>Potřebujete vysavač na objednávku</strong>
                 <small>Přivezeme malý vysavač</small>
@@ -224,7 +228,9 @@
               aria-expanded="false"
               aria-controls="upholstery-panel"
             >
-              <span class="upholstery-icon">🛋️</span>
+              <span class="upholstery-icon">
+                <img src="assets/icons/sofa.svg" alt="" class="ui-icon-image" aria-hidden="true" />
+              </span>
               <span class="upholstery-copy">
                 OBJEDNÁNÍ CHEMICKÉHO ČIŠTĚNÍ NÁBYTKU A KOBERCŮ SOUČASNĚ S ÚKLIDEM
               </span>
@@ -234,34 +240,6 @@
             <div class="upholstery-panel" id="upholstery-panel" hidden>
               <div class="service-cards service-cards--upholstery" id="upholstery-grid"></div>
             </div>
-
-            <button
-              class="upholstery-toggle"
-              id="handyman-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="handyman-panel"
-            >
-              <span class="upholstery-icon">🛠️</span>
-              <span class="upholstery-copy">MUŽ NA HODINU</span>
-              <span class="toggle-arrow">⌄</span>
-            </button>
-
-            <div class="upholstery-panel" id="handyman-panel" hidden></div>
-
-            <button
-              class="upholstery-toggle"
-              id="moving-toggle"
-              type="button"
-              aria-expanded="false"
-              aria-controls="moving-panel"
-            >
-              <span class="upholstery-icon">📦</span>
-              <span class="upholstery-copy">PŘEVOZ A STĚHOVÁNÍ</span>
-              <span class="toggle-arrow">⌄</span>
-            </button>
-
-            <div class="upholstery-panel" id="moving-panel" hidden></div>
           </div>
         </section>
 
@@ -355,12 +333,16 @@
 
             <div class="payment-grid">
               <button class="payment-card selected" type="button" data-payment="cash">
-                <span class="payment-icon">💵</span>
+                <span class="payment-icon">
+                  <img src="assets/icons/cash.svg" alt="" class="ui-icon-image" aria-hidden="true" />
+                </span>
                 <strong>Hotovost</strong>
               </button>
 
               <button class="payment-card" type="button" data-payment="card">
-                <span class="payment-icon">💳</span>
+                <span class="payment-icon">
+                  <img src="assets/icons/card.svg" alt="" class="ui-icon-image" aria-hidden="true" />
+                </span>
                 <strong>Online kartou / Apple Pay / Google Pay</strong>
               </button>
             </div>
@@ -406,7 +388,9 @@
           <h3 id="summary-title">Úklid bytu s 1 pokojem a 2 koupelny, kuchyně, chodba 1358 Kč</h3>
 
           <div class="summary-note">
-            <span class="summary-note-icon">🧴</span>
+            <span class="summary-note-icon">
+              <img src="assets/icons/spray.svg" alt="" class="ui-icon-image" aria-hidden="true" />
+            </span>
             <p>Naši partneři mají všechny potřebné čisticí prostředky a jiné vybavení</p>
           </div>
 
@@ -417,7 +401,9 @@
 
           <form class="promo-box" id="promo-form">
             <label class="promo-input-wrap" for="promo-code">
-              <span class="promo-icon">%</span>
+              <span class="promo-icon">
+                <img src="assets/icons/promo.svg" alt="" class="ui-icon-image" aria-hidden="true" />
+              </span>
               <input id="promo-code" type="text" placeholder="Zadejte reklamní kód" />
             </label>
             <button class="promo-button" type="submit">Použít</button>

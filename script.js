@@ -100,8 +100,6 @@ const uiText = {
     "ЗАМОВЛЕННЯ ХІМЧИСТКИ МЕБЛІВ І КИЛИМІВ РАЗОМ ІЗ ПРИБИРАННЯМ",
     "ORDER FURNITURE AND CARPET DRY CLEANING TOGETHER WITH CLEANING"
   ),
-  handymanToggle: tr("MUŽ NA HODINU", "МУЖ НА ЧАС", "ЧОЛОВІК НА ГОДИНУ", "HANDYMAN"),
-  movingToggle: tr("PŘEVOZ A STĚHOVÁNÍ", "ПЕРЕВОЗКА И ПЕРЕЕЗД", "ПЕРЕВЕЗЕННЯ ТА ПЕРЕЇЗД", "MOVING AND DELIVERY"),
   addressTitle: tr("Zadejte svou adresu", "Укажите свой адрес", "Вкажіть свою адресу", "Enter your address"),
   cityLabel: tr("Vyberte své město", "Выберите свой город", "Оберіть своє місто", "Choose your city"),
   streetLabel: tr("Ulice", "Улица", "Вулиця", "Street"),
@@ -155,119 +153,39 @@ const uiText = {
 };
 
 const extrasCatalog = [
-  { key: "trouba", label: tr("Vyčistíme troubu", "Почистим духовку", "Почистимо духовку", "Oven cleaning"), price: 349, icon: "🧯" },
-  { key: "digestor", label: tr("Vyčistíme digestoř", "Почистим вытяжку", "Почистимо витяжку", "Hood cleaning"), price: 349, icon: "🌬️" },
-  { key: "skrinky", label: tr("Vyčistíme kuchyňské skříňky (5 skříněk)", "Почистим кухонные шкафчики (5 шкафчиков)", "Почистимо кухонні шафки (5 шафок)", "Kitchen cabinet cleaning (5 cabinets)"), price: 349, icon: "🧰" },
-  { key: "nadobi", label: tr("Umyjeme nádobí", "Помоем посуду", "Помиємо посуд", "Dish washing"), price: 209, icon: "🍽️" },
-  { key: "lednice", label: tr("Vyčistíme lednici", "Почистим холодильник", "Почистимо холодильник", "Fridge cleaning"), price: 349, icon: "🧊" },
-  { key: "mikrovlnka", label: tr("Umyjeme mikrovlnnou troubu", "Помоем микроволновку", "Помиємо мікрохвильовку", "Microwave cleaning"), price: 250, icon: "📦" },
-  { key: "balkon", label: tr("Uklidíme na balkoně", "Уберём на балконе", "Приберемо на балконі", "Balcony cleaning"), price: 225, icon: "🪟" },
-  { key: "okna", label: tr("Mytí oken", "Мытьё окон", "Миття вікон", "Window cleaning"), price: 229, icon: "🪟", quantity: true },
-  { key: "zehleni", label: tr("Žehlení", "Глажка", "Прасування", "Ironing"), price: 349, icon: "🧺" },
-  { key: "zvirata", label: tr("Uklizení podestýlky pro zvířata", "Уборка подстилки для животных", "Прибирання підстилки для тварин", "Pet litter cleaning"), price: 200, icon: "🐈" },
-  { key: "hodiny", label: tr("Hodiny navíc", "Дополнительные часы", "Додаткові години", "Extra hours"), price: 349, icon: "🕘" },
-  { key: "skrini", label: tr("Uklidit ve skříni", "Убрать в шкафу", "Прибрати в шафі", "Closet organization"), price: 349, icon: "🚪" },
+  { key: "trouba", label: tr("Vyčistíme troubu", "Почистим духовку", "Почистимо духовку", "Oven cleaning"), price: 349, icon: "oven.svg" },
+  { key: "digestor", label: tr("Vyčistíme digestoř", "Почистим вытяжку", "Почистимо витяжку", "Hood cleaning"), price: 349, icon: "hood.svg" },
+  { key: "skrinky", label: tr("Vyčistíme kuchyňské skříňky (5 skříněk)", "Почистим кухонные шкафчики (5 шкафчиков)", "Почистимо кухонні шафки (5 шафок)", "Kitchen cabinet cleaning (5 cabinets)"), price: 349, icon: "cabinet.svg" },
+  { key: "nadobi", label: tr("Umyjeme nádobí", "Помоем посуду", "Помиємо посуд", "Dish washing"), price: 209, icon: "dishes.svg" },
+  { key: "lednice", label: tr("Vyčistíme lednici", "Почистим холодильник", "Почистимо холодильник", "Fridge cleaning"), price: 349, icon: "fridge.svg" },
+  { key: "mikrovlnka", label: tr("Umyjeme mikrovlnnou troubu", "Помоем микроволновку", "Помиємо мікрохвильовку", "Microwave cleaning"), price: 250, icon: "microwave.svg" },
+  { key: "balkon", label: tr("Uklidíme na balkoně", "Уберём на балконе", "Приберемо на балконі", "Balcony cleaning"), price: 225, icon: "balcony.svg" },
+  { key: "okna", label: tr("Mytí oken", "Мытьё окон", "Миття вікон", "Window cleaning"), price: 229, icon: "window.svg", quantity: true },
+  { key: "zehleni", label: tr("Žehlení", "Глажка", "Прасування", "Ironing"), price: 349, icon: "iron.svg" },
+  { key: "zvirata", label: tr("Uklizení podestýlky pro zvířata", "Уборка подстилки для животных", "Прибирання підстилки для тварин", "Pet litter cleaning"), price: 200, icon: "pet.svg" },
+  { key: "hodiny", label: tr("Hodiny navíc", "Дополнительные часы", "Додаткові години", "Extra hours"), price: 349, icon: "clock.svg" },
+  { key: "skrini", label: tr("Uklidit ve skříni", "Убрать в шкафу", "Прибрати в шафі", "Closet organization"), price: 349, icon: "wardrobe.svg" },
 ];
 
 const upholsteryCatalog = [
-  { key: "sofa2", label: tr("Čištění dvoulůžkové pohovky", "Чистка двухместного дивана", "Чистка двомісного дивана", "Two-seat sofa cleaning"), price: 895, icon: "🛋️" },
-  { key: "sofa3", label: tr("Čištění třímístné pohovky", "Чистка трёхместного дивана", "Чистка тримісного дивана", "Three-seat sofa cleaning"), price: 1190, icon: "🛋️" },
-  { key: "corner4", label: tr("Čištění rohové sedací soupravy (4 místa)", "Чистка углового дивана (4 места)", "Чистка кутового дивана (4 місця)", "Corner sofa cleaning (4 seats)"), price: 1490, icon: "🪑" },
-  { key: "corner6", label: tr("Čištění rohové sedací soupravy (5-6 míst)", "Чистка углового дивана (5-6 мест)", "Чистка кутового дивана (5-6 місць)", "Corner sofa cleaning (5-6 seats)"), price: 1790, icon: "🪑" },
-  { key: "corner7", label: tr("Čištění rohové sedací soupravy (7+ míst)", "Чистка углового дивана (7+ мест)", "Чистка кутового дивана (7+ місць)", "Corner sofa cleaning (7+ seats)"), price: 2090, icon: "🪑" },
-  { key: "mattress1a", label: tr("Čištění matrací (Jednolůžko z jedné strany)", "Чистка матраса (односпальный с одной стороны)", "Чистка матраца (односпальний з одного боку)", "Mattress cleaning (single-sided single bed)"), price: 615, icon: "🛏️" },
-  { key: "mattress1b", label: tr("Čištění matrací (Jednolůžko z obou stran)", "Чистка матраса (односпальный с двух сторон)", "Чистка матраца (односпальний з обох боків)", "Mattress cleaning (double-sided single bed)"), price: 845, icon: "🛏️" },
-  { key: "mattress2a", label: tr("Čištění matrací (Dvoulůžko z jedné strany)", "Чистка матраса (двуспальный с одной стороны)", "Чистка матраца (двоспальний з одного боку)", "Mattress cleaning (single-sided double bed)"), price: 1230, icon: "🛏️" },
-  { key: "mattress2b", label: tr("Čištění matrací (Dvoulůžko z obou stran)", "Чистка матраса (двуспальный с двух сторон)", "Чистка матраца (двоспальний з обох боків)", "Mattress cleaning (double-sided double bed)"), price: 1690, icon: "🛏️" },
-  { key: "koberec", label: tr("Čištění koberců", "Чистка ковров", "Чистка килимів", "Carpet cleaning"), price: 99, icon: "🧶" },
-  { key: "krytina", label: tr("Čištění kobercová krytina", "Чистка ковролина", "Чистка килимового покриття", "Carpet flooring cleaning"), price: 95, icon: "🧶" },
-  { key: "kreslo", label: tr("Čištění křesla", "Чистка кресла", "Чистка крісла", "Armchair cleaning"), price: 615, icon: "🪑" },
-  { key: "office", label: tr("Čištění kancelářských židlí", "Чистка офисных стульев", "Чистка офісних стільців", "Office chair cleaning"), price: 365, icon: "💺" },
-  { key: "stolicky", label: tr("Chemické čištění židlí, stoliček", "Химчистка стульев и табуретов", "Хімчистка стільців і табуретів", "Dry cleaning of chairs and stools"), price: 280, icon: "🪑" },
-  { key: "postele", label: tr("Čištění čalouněných postelí", "Чистка мягких кроватей", "Чистка м'яких ліжок", "Upholstered bed cleaning"), price: 895, icon: "🛏️" },
-  { key: "puf", label: tr("Čištění pufu nebo otomanu (1 místo)", "Чистка пуфа или оттоманки (1 место)", "Чистка пуфа або отоманки (1 місце)", "Pouf or ottoman cleaning (1 seat)"), price: 295, icon: "🧸" },
-  { key: "kocarek", label: tr("Čištění čalounění kočárku", "Чистка обивки коляски", "Чистка оббивки візочка", "Stroller upholstery cleaning"), price: null, badge: tr("Cena na dotaz", "Цена по запросу", "Ціна за запитом", "Price on request"), icon: "🌼" },
-  { key: "pachy", label: tr("Odstraňovač pachů", "Удаление запахов", "Видалення запахів", "Odor removal"), price: null, note: tr("Dle počtu jednotek nabídka", "По количеству единиц", "Залежно від кількості одиниць", "Quoted by quantity"), icon: "〰️" },
-];
-
-const handymanSections = [
-  {
-    title: tr("Instalatérské služby", "Сантехнические услуги", "Сантехнічні послуги", "Plumbing services"),
-    items: [
-      { key: "tap", label: tr("Výměna vodovodní baterie", "Замена смесителя", "Заміна змішувача", "Tap replacement"), price: 400, icon: "🚰" },
-      { key: "sifon", label: tr("Instalace / výměna sifonu u umyvadla", "Установка / замена сифона у раковины", "Встановлення / заміна сифона біля умивальника", "Sink siphon installation / replacement"), price: 600, icon: "🚿" },
-      { key: "washer", label: tr("Instalace pračky", "Установка стиральной машины", "Встановлення пральної машини", "Washing machine installation"), price: 400, icon: "🧺" },
-      { key: "dishwasher", label: tr("Instalace myčky nádobí", "Установка посудомоечной машины", "Встановлення посудомийної машини", "Dishwasher installation"), price: 400, icon: "🍽️" },
-      { key: "fan", label: tr("Instalace ventilátoru v koupelně", "Установка вентилятора в ванной", "Встановлення вентилятора у ванній", "Bathroom fan installation"), price: 600, icon: "🪭" },
-      { key: "bidet", label: tr("Instalace bidetu", "Установка биде", "Встановлення біде", "Bidet installation"), price: 650, icon: "🚽" },
-      { key: "sink", label: tr("Instalace umyvadla", "Установка умывальника", "Встановлення умивальника", "Sink installation"), price: 600, icon: "🛁" },
-      { key: "toilet", label: tr("Instalace toalety", "Установка унитаза", "Встановлення унітаза", "Toilet installation"), price: 600, icon: "🚽" },
-      { key: "urinal", label: tr("Instalace pisoárů", "Установка писсуара", "Встановлення пісуара", "Urinal installation"), price: 550, icon: "🚻" },
-      { key: "hoses", label: tr("Výměna / instalace hadic pro vanové baterie, umyvadla, dřezu a umyvadla", "Замена / установка шлангов для ванны, умывальника и мойки", "Заміна / встановлення шлангів для ванни, умивальника та мийки", "Hose replacement / installation for bath, sink, and basin"), price: 350, icon: "🪝" },
-      { key: "demolition-plumbing", label: tr("Demontáž (bidet, umyvadlo, WC sedátko, pisoár)", "Демонтаж (биде, умывальник, сиденье унитаза, писсуар)", "Демонтаж (біде, умивальник, сидіння унітаза, пісуар)", "Removal (bidet, sink, toilet seat, urinal)"), price: 400, icon: "❌" },
-    ],
-  },
-  {
-    title: tr("Stavební služby", "Строительные услуги", "Будівельні послуги", "Construction services"),
-    items: [
-      { key: "curtains", label: tr("Instalace záclonových kolejnic", "Установка карнизов для штор", "Встановлення карнизів для штор", "Curtain rail installation"), price: 300, from: true, icon: "🪟" },
-      { key: "shelf-mirror", label: tr("Instalace police, zrcadla", "Установка полки, зеркала", "Встановлення полиці, дзеркала", "Shelf or mirror installation"), price: 300, from: true, icon: "🪞" },
-      { key: "pictures", label: tr("Instalace závěsných obrazů, tabulí atd.", "Установка картин, досок и т. д.", "Встановлення картин, дощок тощо", "Installing pictures, boards, etc."), price: 250, from: true, icon: "🖼️" },
-    ],
-  },
-  {
-    title: tr("Zámečnické služby", "Слесарные услуги", "Слюсарні послуги", "Locksmith services"),
-    items: [
-      { key: "mail-lock", label: tr("Výměna zámku poštovní schránky", "Замена замка почтового ящика", "Заміна замка поштової скриньки", "Mailbox lock replacement"), price: 250, icon: "📫" },
-      { key: "handle", label: tr("Instalace / oprava / výměna dveřních klik", "Установка / ремонт / замена дверных ручек", "Встановлення / ремонт / заміна дверних ручок", "Door handle installation / repair / replacement"), price: 350, icon: "🚪" },
-      { key: "lock-cylinder", label: tr("Instalace / výměna vložky zámku dveří", "Установка / замена цилиндра замка двери", "Встановлення / заміна серцевини дверного замка", "Door lock cylinder installation / replacement"), price: 350, icon: "🔒" },
-      { key: "door-adjust", label: tr("Oprava a seřízení dveří", "Ремонт и регулировка двери", "Ремонт і регулювання дверей", "Door repair and adjustment"), price: 650, icon: "🚪" },
-    ],
-  },
-  {
-    title: tr("Truhlářské služby", "Плотницкие услуги", "Столярні послуги", "Carpentry services"),
-    items: [
-      { key: "bed-fix", label: tr("Opravy postelí a pohovek", "Ремонт кроватей и диванов", "Ремонт ліжок і диванів", "Bed and sofa repair"), price: 400, from: true, icon: "🛏️" },
-      { key: "furniture", label: tr("Montáž nábytku", "Сборка мебели", "Монтаж меблів", "Furniture assembly"), price: 250, from: true, icon: "🪑" },
-      { key: "wardrobe", label: tr("Oprava posuvné skříně / lepení zrcadel", "Ремонт шкафа-купе / приклеивание зеркал", "Ремонт шафи-купе / приклеювання дзеркал", "Sliding wardrobe repair / mirror bonding"), price: 650, icon: "🚪" },
-      { key: "fridge-door", label: tr("Výměna / instalace / oprava závěsů dveří chladničky", "Замена / установка / ремонт петель двери холодильника", "Заміна / встановлення / ремонт петель дверей холодильника", "Fridge door hinge replacement / installation / repair"), price: 450, icon: "🪛" },
-    ],
-  },
-  {
-    title: tr("Elektrotechnické služby", "Электротехнические услуги", "Електротехнічні послуги", "Electrical services"),
-    items: [
-      { key: "wire", label: tr("Zavedení elektrické přípojky", "Прокладка электрического подключения", "Прокладання електричного підключення", "Electrical connection installation"), price: 500, icon: "⚡" },
-      { key: "fuse", label: tr("Výměna pojistek", "Замена предохранителей", "Заміна запобіжників", "Fuse replacement"), price: 500, icon: "🎛️" },
-      { key: "bulbs", label: tr("Výměna žárovek, halogenových žárovek a zářivek", "Замена лампочек, галогеновых ламп и светильников", "Заміна лампочок, галогенових ламп і люмінесцентних ламп", "Bulb, halogen, and tube replacement"), price: 300, icon: "💡" },
-      { key: "socket", label: tr("Instalace elektrické zásuvky", "Установка электрической розетки", "Встановлення електричної розетки", "Electrical socket installation"), price: 400, icon: "🔌" },
-      { key: "led", label: tr("Instalace lustru / LED podsvícení", "Установка люстры / LED подсветки", "Встановлення люстри / LED підсвітки", "Chandelier / LED lighting installation"), price: 500, icon: "🏮" },
-      { key: "repair-wire", label: tr("Oprava elektrických přípojek", "Ремонт электрических подключений", "Ремонт електричних підключень", "Electrical connection repair"), price: 450, icon: "🧷" },
-      { key: "hob", label: tr("Připojení elektrické varné desky", "Подключение электрической варочной панели", "Підключення електричної варильної поверхні", "Electric cooktop connection"), price: 650, icon: "🎛️" },
-      { key: "chandelier-fix", label: tr("Oprava lustru", "Ремонт люстры", "Ремонт люстри", "Chandelier repair"), price: 650, icon: "💡" },
-      { key: "diagnostics", label: tr("Elektrická diagnostika", "Электрическая диагностика", "Електрична діагностика", "Electrical diagnostics"), price: 1000, icon: "🧰" },
-      { key: "switch", label: tr("Instalace spínače", "Установка выключателя", "Встановлення вимикача", "Switch installation"), price: 400, icon: "🎚️" },
-    ],
-  },
-];
-
-const movingSections = [
-  {
-    title: tr("Vyberte objednávku služeb", "Выберите заказ услуг", "Оберіть замовлення послуг", "Choose service order"),
-    items: [
-      { key: "demontaz-nabytku", label: tr("Demontáž nábytku", "Разборка мебели", "Демонтаж меблів", "Furniture dismantling"), price: 500, icon: "🔨" },
-      { key: "zbozi50", label: tr("Přeprava zboží do 50 kg", "Перевозка груза до 50 кг", "Перевезення вантажу до 50 кг", "Goods transport up to 50 kg"), price: 1099, note: tr("Vhodné pro přepravu 1 kusu nábytku", "Подходит для перевозки 1 предмета мебели", "Підходить для перевезення 1 одиниці меблів", "Suitable for transporting 1 piece of furniture"), icon: "📦" },
-      { key: "move1", label: tr("Stěhování pro 1+1 nebo 1+kk byt", "Переезд для квартиры 1+1 или 1+кк", "Переїзд для квартири 1+1 або 1+кк", "Moving for a 1+1 or 1+kk apartment"), price: 3490, note: tr("Vhodné pro přepravu 5-6 kusů nábytku a 12-14 krabic věcí", "Подходит для перевозки 5-6 предметов мебели и 12-14 коробок вещей", "Підходить для перевезення 5-6 одиниць меблів та 12-14 коробок речей", "Suitable for transporting 5-6 furniture items and 12-14 boxes"), icon: "📦" },
-      { key: "delivery-address", label: tr("Dodací adresa", "Адрес доставки", "Адреса доставки", "Delivery address"), price: 0, icon: "🧹" },
-      { key: "outside-city", label: tr("Doručení mimo město", "Доставка за город", "Доставка за місто", "Delivery outside the city"), price: 30, icon: "🧹" },
-      { key: "half-hour", label: tr("Půl hodiny navíc", "Дополнительные полчаса", "Додаткові пів години", "Extra half hour"), price: 749, icon: "🕘" },
-      { key: "stairs", label: tr("Bez výtahu a nad 2. patrem", "Без лифта и выше 2 этажа", "Без ліфта і вище 2 поверху", "No elevator and above the 2nd floor"), price: 500, icon: "🏢" },
-      { key: "oversize", label: tr("Nadměrný náklad", "Негабаритный груз", "Негабаритний вантаж", "Oversized cargo"), price: 500, icon: "📦" },
-      { key: "move2", label: tr("Stěhování pro 2+1 nebo 2+kk byt", "Переезд для квартиры 2+1 или 2+кк", "Переїзд для квартири 2+1 або 2+кк", "Moving for a 2+1 or 2+kk apartment"), price: 6490, note: tr("Vhodné pro přepravu 8-10 kusů nábytku a 18-20 krabic věcí", "Подходит для перевозки 8-10 предметов мебели и 18-20 коробок вещей", "Підходить для перевезення 8-10 одиниць меблів та 18-20 коробок речей", "Suitable for transporting 8-10 furniture items and 18-20 boxes"), icon: "📦" },
-      { key: "move3", label: tr("Stěhování pro 3+1 nebo 3+kk byt", "Переезд для квартиры 3+1 или 3+кк", "Переїзд для квартири 3+1 або 3+кк", "Moving for a 3+1 or 3+kk apartment"), price: 9990, note: tr("Vhodné pro přepravu 14-16 kusů nábytku a 26-28 krabic věcí", "Подходит для перевозки 14-16 предметов мебели и 26-28 коробок вещей", "Підходить для перевезення 14-16 одиниць меблів та 26-28 коробок речей", "Suitable for transporting 14-16 furniture items and 26-28 boxes"), icon: "🚚" },
-      { key: "packing", label: tr("Balení", "Упаковка", "Пакування", "Packing"), price: 200, icon: "📥" },
-      { key: "waste", label: tr("Likvidace odpadu", "Вывоз мусора", "Вивезення сміття", "Waste disposal"), price: 2500, icon: "🗑️" },
-    ],
-  },
+  { key: "sofa2", label: tr("Čištění dvoulůžkové pohovky", "Чистка двухместного дивана", "Чистка двомісного дивана", "Two-seat sofa cleaning"), price: 895, icon: "sofa.svg" },
+  { key: "sofa3", label: tr("Čištění třímístné pohovky", "Чистка трёхместного дивана", "Чистка тримісного дивана", "Three-seat sofa cleaning"), price: 1190, icon: "sofa.svg" },
+  { key: "corner4", label: tr("Čištění rohové sedací soupravy (4 místa)", "Чистка углового дивана (4 места)", "Чистка кутового дивана (4 місця)", "Corner sofa cleaning (4 seats)"), price: 1490, icon: "corner-sofa.svg" },
+  { key: "corner6", label: tr("Čištění rohové sedací soupravy (5-6 míst)", "Чистка углового дивана (5-6 мест)", "Чистка кутового дивана (5-6 місць)", "Corner sofa cleaning (5-6 seats)"), price: 1790, icon: "corner-sofa.svg" },
+  { key: "corner7", label: tr("Čištění rohové sedací soupravy (7+ míst)", "Чистка углового дивана (7+ мест)", "Чистка кутового дивана (7+ місць)", "Corner sofa cleaning (7+ seats)"), price: 2090, icon: "corner-sofa.svg" },
+  { key: "mattress1a", label: tr("Čištění matrací (Jednolůžko z jedné strany)", "Чистка матраса (односпальный с одной стороны)", "Чистка матраца (односпальний з одного боку)", "Mattress cleaning (single-sided single bed)"), price: 615, icon: "bed.svg" },
+  { key: "mattress1b", label: tr("Čištění matrací (Jednolůžko z obou stran)", "Чистка матраса (односпальный с двух сторон)", "Чистка матраца (односпальний з обох боків)", "Mattress cleaning (double-sided single bed)"), price: 845, icon: "bed.svg" },
+  { key: "mattress2a", label: tr("Čištění matrací (Dvoulůžko z jedné strany)", "Чистка матраса (двуспальный с одной стороны)", "Чистка матраца (двоспальний з одного боку)", "Mattress cleaning (single-sided double bed)"), price: 1230, icon: "bed.svg" },
+  { key: "mattress2b", label: tr("Čištění matrací (Dvoulůžko z obou stran)", "Чистка матраса (двуспальный с двух сторон)", "Чистка матраца (двоспальний з обох боків)", "Mattress cleaning (double-sided double bed)"), price: 1690, icon: "bed.svg" },
+  { key: "koberec", label: tr("Čištění koberců", "Чистка ковров", "Чистка килимів", "Carpet cleaning"), price: 99, icon: "rug.svg" },
+  { key: "krytina", label: tr("Čištění kobercová krytina", "Чистка ковролина", "Чистка килимового покриття", "Carpet flooring cleaning"), price: 95, icon: "rug.svg" },
+  { key: "kreslo", label: tr("Čištění křesla", "Чистка кресла", "Чистка крісла", "Armchair cleaning"), price: 615, icon: "armchair.svg" },
+  { key: "office", label: tr("Čištění kancelářských židlí", "Чистка офисных стульев", "Чистка офісних стільців", "Office chair cleaning"), price: 365, icon: "office-chair.svg" },
+  { key: "stolicky", label: tr("Chemické čištění židlí, stoliček", "Химчистка стульев и табуретов", "Хімчистка стільців і табуретів", "Dry cleaning of chairs and stools"), price: 280, icon: "chair.svg" },
+  { key: "postele", label: tr("Čištění čalouněných postelí", "Чистка мягких кроватей", "Чистка м'яких ліжок", "Upholstered bed cleaning"), price: 895, icon: "bed.svg" },
+  { key: "puf", label: tr("Čištění pufu nebo otomanu (1 místo)", "Чистка пуфа или оттоманки (1 место)", "Чистка пуфа або отоманки (1 місце)", "Pouf or ottoman cleaning (1 seat)"), price: 295, icon: "ottoman.svg" },
+  { key: "kocarek", label: tr("Čištění čalounění kočárku", "Чистка обивки коляски", "Чистка оббивки візочка", "Stroller upholstery cleaning"), price: null, badge: tr("Cena na dotaz", "Цена по запросу", "Ціна за запитом", "Price on request"), icon: "stroller.svg" },
+  { key: "pachy", label: tr("Odstraňovač pachů", "Удаление запахов", "Видалення запахів", "Odor removal"), price: null, note: tr("Dle počtu jednotek nabídka", "По количеству единиц", "Залежно від кількості одиниць", "Quoted by quantity"), icon: "odor.svg" },
 ];
 
 const cityOptions = [
@@ -300,8 +218,6 @@ const PROMO_CODES = {
 };
 
 const COMPANY_SURCHARGE = 175;
-const HANDYMAN_MIN_ORDER = 1500;
-
 const today = getStartOfDay(new Date());
 const calendarMonths = buildCalendarMonths(today);
 const initialSelectedDay = calendarMonths[0]?.cells.find((cell) => !cell.empty && !cell.blocked)?.key ?? "";
@@ -317,8 +233,6 @@ const state = {
   frequencyDiscount: 0,
   extras: new Set(),
   upholsteryExtras: new Set(),
-  handymanExtras: new Set(),
-  movingExtras: new Set(),
   windowCount: 0,
   vacuumNeeded: false,
   promo: null,
@@ -326,15 +240,11 @@ const state = {
   currentMonth: 0,
   selectedDay: initialSelectedDay,
   selectedTime: "9:00",
+  openTimeBase: "",
   payment: "cash",
   upholsteryOpen: false,
-  handymanOpen: false,
-  movingOpen: false,
   city: cityOptions[0].value,
 };
-
-const allHandymanItems = handymanSections.flatMap((section) => section.items);
-const allMovingItems = movingSections.flatMap((section) => section.items);
 
 const progressSteps = [...document.querySelectorAll(".progress-step")];
 const progressBar = document.querySelector(".page-progress");
@@ -367,11 +277,7 @@ const vacuumInput = document.getElementById("vacuum-needed");
 const extrasGrid = document.getElementById("extras-grid");
 const upholsteryGrid = document.getElementById("upholstery-grid");
 const upholsteryPanel = document.getElementById("upholstery-panel");
-const handymanPanel = document.getElementById("handyman-panel");
-const movingPanel = document.getElementById("moving-panel");
 const upholsteryToggle = document.getElementById("upholstery-toggle");
-const handymanToggle = document.getElementById("handyman-toggle");
-const movingToggle = document.getElementById("moving-toggle");
 const citySelect = document.getElementById("city");
 const phoneInput = document.getElementById("phone-input");
 const promoForm = document.getElementById("promo-form");
@@ -407,8 +313,6 @@ const addressFieldLabels = [...document.querySelectorAll(".form-stage--address .
 const contactFieldLabels = [...document.querySelectorAll(".form-stage--contact .field > span")];
 const addonToggleTitles = {
   upholstery: upholsteryToggle.querySelector(".upholstery-copy"),
-  handyman: handymanToggle.querySelector(".upholstery-copy"),
-  moving: movingToggle.querySelector(".upholstery-copy"),
 };
 
 function currentLocaleTag() {
@@ -594,8 +498,10 @@ function createMonth({ year, monthIndex, todayDate }) {
   return { key, year, monthIndex, cells };
 }
 
-function buildCalendarMonths(startDate, count = 12) {
-  return Array.from({ length: count }, (_, offset) => {
+function buildCalendarMonths(startDate) {
+  const monthCount = 12 - startDate.getMonth();
+
+  return Array.from({ length: monthCount }, (_, offset) => {
     const monthDate = new Date(startDate.getFullYear(), startDate.getMonth() + offset, 1);
     return createMonth({
       year: monthDate.getFullYear(),
@@ -609,16 +515,13 @@ function formatTime(hour, minute) {
   return `${hour}:${String(minute).padStart(2, "0")}`;
 }
 
-const timeOptions = [
-  { base: "7:30", choices: ["7:45"] },
-  ...Array.from({ length: 13 }, (_, index) => {
-    const hour = index + 8;
-    return {
-      base: formatTime(hour, 0),
-      choices: [15, 30, 45].map((minute) => formatTime(hour, minute)),
-    };
-  }),
-];
+const timeOptions = Array.from({ length: 13 }, (_, index) => {
+  const hour = index + 8;
+  return {
+    base: formatTime(hour, 0),
+    choices: [15, 30, 45].map((minute) => formatTime(hour, minute)),
+  };
+});
 
 function getSelectedCity() {
   return cityOptions.find((option) => option.value === state.city) ?? cityOptions[0];
@@ -701,6 +604,10 @@ function createWindowCounterMarkup(selected) {
   `;
 }
 
+function createIconMarkup(icon, className = "service-card__icon-image") {
+  return `<img src="assets/icons/${icon}" alt="" class="${className}" loading="lazy" decoding="async" aria-hidden="true" />`;
+}
+
 function createServiceCardMarkup(item, selectedSet, groupName) {
   const selected = selectedSet.has(item.key);
   const noteMarkup = item.note ? `<small class="service-card__note">${text(item.note)}</small>` : "";
@@ -715,7 +622,7 @@ function createServiceCardMarkup(item, selectedSet, groupName) {
       data-card-key="${item.key}"
       data-card-group="${groupName}"
     >
-      <span class="service-card__icon">${item.icon}</span>
+      <span class="service-card__icon">${createIconMarkup(item.icon)}</span>
       <span class="service-card__title">${text(item.label)}</span>
       ${noteMarkup}
       ${quantityCounter}
@@ -726,23 +633,6 @@ function createServiceCardMarkup(item, selectedSet, groupName) {
 
 function renderServiceCards(target, items, selectedSet, groupName) {
   target.innerHTML = items.map((item) => createServiceCardMarkup(item, selectedSet, groupName)).join("");
-}
-
-function renderGroupedCatalog(target, sections, selectedSet, groupName) {
-  target.innerHTML = `
-    ${sections
-      .map(
-        (section) => `
-          <section class="service-group">
-            <h3 class="service-group__title">${text(section.title)}</h3>
-            <div class="service-cards">
-              ${section.items.map((item) => createServiceCardMarkup(item, selectedSet, groupName)).join("")}
-            </div>
-          </section>
-        `
-      )
-      .join("")}
-  `;
 }
 
 function renderCalendar() {
@@ -777,11 +667,13 @@ function renderCalendar() {
       ]
         .filter(Boolean)
         .join(" ");
+      const dayMetaLabel =
+        state.selectedDay === item.key ? state.selectedTime : item.isToday ? text(uiText.today) : item.discount || "&nbsp;";
 
       return `
         <button class="${cellClasses}" type="button" data-day-key="${item.key}">
           <span class="calendar-card">
-            <small>${item.isToday ? text(uiText.today) : item.discount || "&nbsp;"}</small>
+            <small>${dayMetaLabel}</small>
             <strong>${item.day}</strong>
           </span>
         </button>
@@ -794,6 +686,11 @@ function slotContainsTime(slot, time) {
   return time === slot.base || slot.choices.includes(time);
 }
 
+function getBaseTime(time) {
+  const [rawHour] = String(time).split(":");
+  return `${Number(rawHour)}:00`;
+}
+
 function getMinuteLabel(time) {
   return `:${time.split(":")[1]}`;
 }
@@ -802,10 +699,8 @@ function renderTimeSlots() {
   timeGrid.innerHTML = timeOptions
     .map((slot) => {
       const selected = slotContainsTime(slot, state.selectedTime) ? " selected" : "";
-      const selectedMinute =
-        slotContainsTime(slot, state.selectedTime) && state.selectedTime !== slot.base
-          ? `<span class="time-slot__selected-minute">${getMinuteLabel(state.selectedTime)}</span>`
-          : "";
+      const open = state.openTimeBase === slot.base ? " open" : "";
+      const displayedTime = selected ? state.selectedTime : slot.base;
       const minuteChoices = slot.choices
         .map((time) => {
           const minuteSelected = state.selectedTime === time ? " selected" : "";
@@ -818,10 +713,9 @@ function renderTimeSlots() {
         .join("");
 
       return `
-        <div class="time-slot-wrap">
+        <div class="time-slot-wrap${open}">
           <button class="time-slot${selected}" type="button" data-time="${slot.base}">
-            <span class="time-slot__label">${slot.base}</span>
-            ${selectedMinute}
+            <span class="time-slot__label">${displayedTime}</span>
           </button>
           <div class="time-slot-minutes">
             ${minuteChoices}
@@ -866,15 +760,6 @@ function getPromoDiscount(subtotal) {
   return state.promo.value;
 }
 
-function getHandymanCharge() {
-  const selectedPrice = getSelectedPrice(allHandymanItems, state.handymanExtras);
-  return selectedPrice > 0 ? Math.max(selectedPrice, HANDYMAN_MIN_ORDER) : 0;
-}
-
-function getMovingCharge() {
-  return getSelectedPrice(allMovingItems, state.movingExtras);
-}
-
 function getDurationMinutes() {
   let minutes = 180 + (state.rooms - 1) * 45 + (state.bathrooms - 1) * 50;
 
@@ -897,8 +782,6 @@ function getDurationMinutes() {
   }
 
   minutes += state.upholsteryExtras.size * 18;
-  minutes += state.handymanExtras.size * 24;
-  minutes += state.movingExtras.size * 20;
 
   return minutes;
 }
@@ -906,17 +789,13 @@ function getDurationMinutes() {
 function getTotals() {
   const extrasPrice = getSelectedPrice(extrasCatalog, state.extras);
   const upholsteryPrice = getSelectedPrice(upholsteryCatalog, state.upholsteryExtras);
-  const handymanPrice = getHandymanCharge();
-  const movingPrice = getMovingCharge();
   const vacuumPrice = state.vacuumNeeded ? 200 : 0;
   const citySurcharge = getSelectedCity().surcharge;
   const companySurcharge = state.customerType === "company" ? COMPANY_SURCHARGE : 0;
   const original =
     (getBasePrice() + extrasPrice + upholsteryPrice + vacuumPrice) * getHouseMultiplier() +
     citySurcharge +
-    companySurcharge +
-    handymanPrice +
-    movingPrice;
+    companySurcharge;
   const frequencyDiscount = original * (state.frequencyDiscount / 100);
   const subtotal = original - frequencyDiscount;
   const promoDiscount = Math.min(getPromoDiscount(subtotal), subtotal);
@@ -972,16 +851,8 @@ function renderKitchenChoices() {
 }
 
 function renderAccordions() {
-  const accordionState = [
-    { toggle: upholsteryToggle, panel: upholsteryPanel, open: state.upholsteryOpen },
-    { toggle: handymanToggle, panel: handymanPanel, open: state.handymanOpen },
-    { toggle: movingToggle, panel: movingPanel, open: state.movingOpen },
-  ];
-
-  accordionState.forEach(({ toggle, panel, open }) => {
-    toggle.setAttribute("aria-expanded", String(open));
-    panel.hidden = !open;
-  });
+  upholsteryToggle.setAttribute("aria-expanded", String(state.upholsteryOpen));
+  upholsteryPanel.hidden = !state.upholsteryOpen;
 }
 
 function updateActiveStep() {
@@ -1039,8 +910,6 @@ function renderStaticTranslations() {
   vacuumTitle.textContent = text(uiText.vacuumTitle);
   vacuumNote.textContent = text(uiText.vacuumNote);
   addonToggleTitles.upholstery.textContent = text(uiText.upholsteryToggle);
-  addonToggleTitles.handyman.textContent = text(uiText.handymanToggle);
-  addonToggleTitles.moving.textContent = text(uiText.movingToggle);
 
   addressTitle.textContent = text(uiText.addressTitle);
   contactTitle.textContent = text(uiText.contactTitle);
@@ -1094,11 +963,6 @@ function renderStaticTranslations() {
   });
 }
 
-function renderGroupedPanels() {
-  renderGroupedCatalog(handymanPanel, handymanSections, state.handymanExtras, "handyman");
-  renderGroupedCatalog(movingPanel, movingSections, state.movingExtras, "moving");
-}
-
 function renderAll() {
   renderStaticTranslations();
   populateCitySelect();
@@ -1109,7 +973,6 @@ function renderAll() {
   renderTimeSlots();
   renderServiceCards(extrasGrid, extrasCatalog, state.extras, "extras");
   renderServiceCards(upholsteryGrid, upholsteryCatalog, state.upholsteryExtras, "upholstery");
-  renderGroupedPanels();
   renderAccordions();
   renderSummary();
   updateActiveStep();
@@ -1139,14 +1002,6 @@ function formatPhoneInput(value) {
 function getSelectedSetByGroup(groupName) {
   if (groupName === "upholstery") {
     return state.upholsteryExtras;
-  }
-
-  if (groupName === "handyman") {
-    return state.handymanExtras;
-  }
-
-  if (groupName === "moving") {
-    return state.movingExtras;
   }
 
   return state.extras;
@@ -1267,7 +1122,15 @@ document.addEventListener("click", (event) => {
 
   const timeButton = event.target.closest("[data-time]");
   if (timeButton) {
-    state.selectedTime = timeButton.dataset.time;
+    if (timeButton.classList.contains("time-minute")) {
+      state.selectedTime = timeButton.dataset.time;
+      state.openTimeBase = "";
+    } else {
+      const baseTime = timeButton.dataset.time;
+      state.selectedTime = baseTime;
+      state.openTimeBase = state.openTimeBase === baseTime ? "" : baseTime;
+    }
+
     renderAll();
   }
 });
@@ -1301,15 +1164,9 @@ paymentCards.forEach((card) => {
   });
 });
 
-[
-  { toggle: upholsteryToggle, key: "upholsteryOpen" },
-  { toggle: handymanToggle, key: "handymanOpen" },
-  { toggle: movingToggle, key: "movingOpen" },
-].forEach(({ toggle, key }) => {
-  toggle.addEventListener("click", () => {
-    state[key] = !state[key];
-    renderAll();
-  });
+upholsteryToggle.addEventListener("click", () => {
+  state.upholsteryOpen = !state.upholsteryOpen;
+  renderAll();
 });
 
 promoForm.addEventListener("submit", (event) => {
